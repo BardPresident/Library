@@ -359,19 +359,18 @@
         .theme-btn {
             display: flex;
             align-items: center;
-            gap: 7px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.68em;
-            letter-spacing: 0.18em;
-            color: var(--text-dim);
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            font-size: 20px;
             border: 1px solid rgba(200,146,42,0.3);
-            border-radius: 20px;
-            padding: 7px 16px;
+            border-radius: 50%;
+            padding: 0;
             background: none;
             cursor: pointer;
             transition: all 0.3s;
         }
-        .theme-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .theme-btn:hover { border-color: var(--gold); transform: scale(1.12); }
 
         /* ── Header ── */
         .grove-header {
@@ -801,7 +800,6 @@
             .copy-url-btn span { display: none; }
             .panel { padding: 18px 16px; }
             .nav-right { gap: 7px; }
-            .theme-btn span { display: none; }
         }
     </style>
 </head>
@@ -820,8 +818,7 @@
         <div class="nav-right">
             <a href="sync-library.html" target="_blank" class="sync-bell-btn">🔔 <span>SYNC BELL</span></a>
             <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
-                <span id="themeIcon">☀</span>
-                <span id="themeLabel">LIGHT MODE</span>
+                <span id="themeIcon">☀️</span>
             </button>
         </div>
     </nav>
@@ -1016,15 +1013,12 @@ function toggleTheme() {
     b.classList.remove('light', 'party');
     if (next === 'light') {
         b.classList.add('light');
-        document.getElementById('themeIcon').textContent  = '🎉';
-        document.getElementById('themeLabel').textContent = 'PARTY MODE';
+        document.getElementById('themeIcon').textContent = '☀️';
     } else if (next === 'party') {
         b.classList.add('party');
-        document.getElementById('themeIcon').textContent  = '🌙';
-        document.getElementById('themeLabel').textContent = 'DARK MODE';
+        document.getElementById('themeIcon').textContent = '🎉';
     } else {
-        document.getElementById('themeIcon').textContent  = '☀';
-        document.getElementById('themeLabel').textContent = 'LIGHT MODE';
+        document.getElementById('themeIcon').textContent = '🌙';
     }
     try { localStorage.setItem('kkk-theme', next === 'light' ? 'light' : next); } catch(e) {}
 }
@@ -1033,16 +1027,13 @@ function toggleTheme() {
 try {
     var saved = localStorage.getItem('kkk-theme');
     if (saved === 'dark') {
-        document.getElementById('themeIcon').textContent  = '☀';
-        document.getElementById('themeLabel').textContent = 'LIGHT MODE';
+        document.getElementById('themeIcon').textContent = '🌙';
     } else if (saved === 'party') {
         document.body.classList.add('party');
-        document.getElementById('themeIcon').textContent  = '🌙';
-        document.getElementById('themeLabel').textContent = 'DARK MODE';
+        document.getElementById('themeIcon').textContent = '🎉';
     } else {
         document.body.classList.add('light');
-        document.getElementById('themeIcon').textContent  = '🎉';
-        document.getElementById('themeLabel').textContent = 'PARTY MODE';
+        document.getElementById('themeIcon').textContent = '☀️';
     }
 } catch(e) {
     document.body.classList.add('light');
