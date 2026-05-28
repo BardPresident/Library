@@ -1005,6 +1005,7 @@ var currentSort = 'newest';
 var BOOK_PREFIX = (window.location.protocol === 'file:')
     ? 'https://kkk.education/library/'
     : 'library/';
+var BOOK_COPY_PREFIX = 'https://kkk.education/library/';
 var TXT_PREFIX = 'https://files.kkk.education/Books/';
 
 // ── Theme ─────────────────────────────────────────────────────────────────────
@@ -1077,7 +1078,7 @@ function organizeTomes() {
 function tomeHTML(t) {
     var m      = t.filename.match(/^(\d+)[-_]/);
     var num    = m ? String(parseInt(m[1],10)).padStart(3,'0') : '';
-    var txtUrl = TXT_PREFIX + t.filename + '.txt';
+    var txtUrl = BOOK_COPY_PREFIX + t.filename + '.html';
     return '<a href="' + BOOK_PREFIX + t.filename + '.html" class="tome-item">'
         + (num ? '<span class="tome-number">' + num + '</span>' : '')
         + '<span class="tome-title">' + escHtml(t.title) + '</span>'
