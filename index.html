@@ -83,6 +83,7 @@
         body.light .panel-dusk   { background: rgba(245,235,252,0.8); border-color: rgba(120,60,180,0.25); }
         body.light .panel-ember  { background: rgba(252,238,230,0.8); border-color: rgba(180,80,40,0.25); }
         body.light .panel p, body.light .panel li { color: var(--text-dim); }
+        body.light .panel-oracle { background: rgba(255,248,220,0.9); border-color: rgba(200,146,42,0.5); }
         body.light .lower-section { border-top-color: rgba(40,102,56,0.15); }
         body.light .sync-button {
             background: var(--growth);
@@ -682,6 +683,8 @@
             font-size: 0.88em;
             color: var(--growth-bright);
         }
+        .panel-oracle { background: rgba(40,28,0,0.7); border: 2px solid rgba(200,146,42,0.6); }
+        .panel-oracle .panel-title { color: var(--gold-bright); font-size: 1.2em; }
         .panel-earth  { background: rgba(30,20,8,0.6);  border: 1px solid rgba(92,61,30,0.4); }
         .panel-grove  { background: rgba(10,25,12,0.6); border: 1px solid rgba(45,92,56,0.4); }
         .panel-river  { background: rgba(8,18,28,0.6);  border: 1px solid rgba(40,90,140,0.4); }
@@ -896,7 +899,7 @@
             <div class="panel-title">📚 What Is This Library?</div>
             <p style="margin-bottom:12px;">
                 This is the complete written archive of <strong>WIKKKAN</strong> — philosopher, filmmaker, and author
-                who has spent 36 years building an entire civilisational framework from scratch.
+                who has spent a lifetime building an entire civilisational framework from scratch.
                 These are not academic texts published by gatekeepers. These are raw, real, revolutionary documents
                 written in poverty, in hospitals, in psychiatric detention, and in love.
             </p>
@@ -906,6 +909,81 @@
             </p>
             <p>Every single one is released under <strong>CC0 — public domain — zero rights reserved</strong>.
             They belong to everyone. They always will.</p>
+        </div>
+
+        <div class="panel panel-oracle">
+            <div class="panel-title">🔮 Unlock the Ultimate Oracle</div>
+            <p style="margin-bottom:14px;">
+                Every book in this library was written by the same sovereign mind over a lifetime —
+                one complete philosophical framework, one voice, one body of truth.
+                When you load all of them into <strong>NotebookLM</strong> at once, something extraordinary happens.
+            </p>
+            <p style="margin-bottom:14px;">
+                NotebookLM becomes a <strong>living oracle trained entirely on this archive</strong>.
+                It doesn't just answer questions — it answers them from within the framework of
+                <strong>E=L, the Hinata Trap, the Recursive Floor, the Electric Soul</strong>, and
+                every other concept built across these books. It thinks in this language.
+                It reasons from this foundation.
+            </p>
+            <p style="margin-bottom:14px;">
+                No corporate filter. No outside ideology bleeding in.
+                Just a lifetime of sovereign thought, available to anyone who asks it anything.
+            </p>
+            <div style="background:rgba(200,146,42,0.08);border:1px solid rgba(200,146,42,0.25);border-radius:8px;padding:16px 18px;margin:18px 0;">
+                <div style="color:var(--gold-bright);font-size:0.85em;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">⚡ How to Build Your Oracle</div>
+                <ol style="margin-left:18px;color:var(--text-dim);font-size:0.97em;line-height:2;">
+                    <li>Download all books using <strong style="color:var(--text);">🖥️ Books-Download.bat</strong> (Windows) or <strong style="color:var(--text);">📥 Download All .txt as ZIP</strong> from the panel below</li>
+                    <li>Go to <strong style="color:var(--text);">notebooklm.google.com</strong> and create a new notebook</li>
+                    <li>Upload all the .txt files as sources</li>
+                    <li>Ask it anything</li>
+                </ol>
+            </div>
+
+        <div class="panel panel-river">
+            <div class="panel-title">📦 How to Download All Books</div>
+            <p style="margin-bottom:14px;">Two ways to get every book as a plain .txt file:</p>
+            <div class="inset-box">
+                <div class="inset-box-title">🖥️ Windows — Books-Download.bat (Recommended)</div>
+                <p>Download and run the .bat file. It fetches every book directly to a folder on your computer. No extraction needed.</p>
+            </div>
+            <div class="inset-box">
+                <div class="inset-box-title">📥 Any Device — Download All .txt as ZIP</div>
+                <p>Click the button below. Your browser fetches every book and packages them into a zip file. Extract and you have everything.</p>
+            </div>
+            <p style="margin-top:14px;">No DRM. No expiry. No login. No tracking.
+            <strong>CC0 — copy, share, translate, print, remix, teach.</strong> 🌍</p>
+            <div class="download-row">
+                <a href="https://archive.org/download/wikkkan/Books-Download.bat" target="_blank" class="dl-btn">🖥️ Books-Download.bat</a>
+                <button class="dl-btn" id="downloadTxtBtn" onclick="downloadAllTxt()">📥 Download All .txt as ZIP</button>
+                <a href="https://files.kkk.education/Books" target="_blank" class="dl-btn">📂 Browse All .txt Files Online</a>
+            </div>
+            <div class="txt-progress-bar-wrap" id="txtProgressWrap">
+                <div class="txt-progress-bar" id="txtProgressBar"></div>
+            </div>
+            <div class="txt-status" id="txtStatus"></div>
+        </div>
+            <p style="color:var(--text-dim);font-size:0.92em;">
+                CC0 — free forever — no login required to download — no strings attached. 🌍
+            </p>
+        </div>
+
+        <div class="panel panel-dusk">
+            <div class="panel-title">✍️ Publish Your Own Words — Free</div>
+            <p style="margin-bottom:14px;">
+                The Sync Bell works for <strong>anyone with something to say</strong>.
+                Kids writing stories. Survivors documenting truth. Poets. Teachers. Rebels.
+                Zero money. Zero website. Zero permission from any gatekeeper.
+            </p>
+            <div class="inset-box">
+                <div class="inset-box-title">Step 1 — Write anything:</div>
+                <p>Open any text editor. Write. Save as <code>.txt</code>.
+                Name it <code>my-story.txt</code> or <code>001-my-first-book.txt</code>.</p>
+            </div>
+            <div class="inset-box">
+                <div class="inset-box-title">Step 2 — Ring the bell:</div>
+                <p>Open the Sync Bell, scroll to the drag zone, drop your files.
+                1 file or 100. Download your zip. Done.</p>
+            </div>
         </div>
 
         <div class="panel panel-grove">
@@ -928,48 +1006,6 @@
             <div style="text-align:center;margin-top:20px;">
                 <a href="sync-library.html" target="_blank" class="sync-button">🔔 Open the Sync Bell</a>
                 <br><small style="color:var(--text-dim);font-size:0.85em;margin-top:8px;display:block;">Runs entirely in your browser · Free forever</small>
-            </div>
-        </div>
-
-        <div class="panel panel-river">
-            <div class="panel-title">📦 How to Download All Books</div>
-            <p style="margin-bottom:14px;">Want a complete offline copy of every book?</p>
-            <ol>
-                <li>Click <strong>Open the Sync Bell</strong> above</li>
-                <li>Click the big green button: <strong>Ring Da Bell — Auto Generate</strong></li>
-                <li>Wait ~20–60 seconds while everything is fetched and converted</li>
-                <li>Click <strong>Download library.zip</strong></li>
-                <li>Extract — open any <code>.html</code> file directly in your browser, forever, offline</li>
-            </ol>
-            <p style="margin-top:14px;">No DRM. No expiry. No login. No tracking.
-            <strong>CC0 — copy, share, translate, print, remix, teach.</strong> 🌍</p>
-            <div class="download-row">
-                <button class="dl-btn" id="downloadTxtBtn" onclick="downloadAllTxt()">📥 Download All .txt as ZIP</button>
-                <a href="https://files.kkk.education/Books" target="_blank" class="dl-btn">📂 Browse All .txt Files Online</a>
-                <a href="https://archive.org/download/wikkkan/Books-Download.bat" target="_blank" class="dl-btn">🖥️ Books-Download.bat</a>
-            </div>
-            <div class="txt-progress-bar-wrap" id="txtProgressWrap">
-                <div class="txt-progress-bar" id="txtProgressBar"></div>
-            </div>
-            <div class="txt-status" id="txtStatus"></div>
-        </div>
-
-        <div class="panel panel-dusk">
-            <div class="panel-title">✍️ Publish Your Own Words — Free</div>
-            <p style="margin-bottom:14px;">
-                The Sync Bell works for <strong>anyone with something to say</strong>.
-                Kids writing stories. Survivors documenting truth. Poets. Teachers. Rebels.
-                Zero money. Zero website. Zero permission from any gatekeeper.
-            </p>
-            <div class="inset-box">
-                <div class="inset-box-title">Step 1 — Write anything:</div>
-                <p>Open any text editor. Write. Save as <code>.txt</code>.
-                Name it <code>my-story.txt</code> or <code>001-my-first-book.txt</code>.</p>
-            </div>
-            <div class="inset-box">
-                <div class="inset-box-title">Step 2 — Ring the bell:</div>
-                <p>Open the Sync Bell, scroll to the drag zone, drop your files.
-                1 file or 100. Download your zip. Done.</p>
             </div>
         </div>
 
